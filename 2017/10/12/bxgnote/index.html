@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>bxgnote | sara sun blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/app.css">
+  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
+  
+</head>
+
+<body>
+  <nav class="app-nav">
+  
+    
+      <a href="/.">home</a>
+    
+  
+    
+      <a href="/archives">archive</a>
+    
+  
+    
+      <a href="/atom.xml">rss</a>
+    
+  
+</nav>
+
+  <main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/2017/10/12/bxgnote/">bxgnote</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">October 12 2017</p>
+  </section>
+
+  <section class="article-entry">
+    <p>//======博学谷第一天===========<br>tree: windows中的命令:将所有的文件以树状图输出<br>1 </p>
+<pre><code>//1- 操作系统:
+    //pc端: windows(娱乐)
+
+            os x  linux (比较适合开发,linkx是基于Unix做出来的,不收费的)
+
+            Unix(收费)
+
+    //移动端操作系统
+
+//2- shell 
+//3- git(源代码管理) 
+</code></pre><p>2 电脑组成<br>    //1- 软件系统:<br>            (1) 应用程序:<br>            (2) 操作系统:是给应用程序提供运行的平台<br>                操作系统分类:<br>                    shell:介于操作系统内核和用户之间的桥梁,用户可以通过shell来操作系统<br>                            (一类东西的统称,shell实际就是操作系统提供,用来和操作系统交互)<br>                            平时使用的都是shell操作的,告诉kernel需要做什么操作<br>                    kernel:负责调用硬件</p>
+<pre><code>            //1- 图形化的shell
+                windows的图像化界面  Android图形化界面  window-x kde  gnome
+
+            //2- 命令的shell
+                cmd(windows系统下的) 
+                bash(linux系统下的)
+                PowerShell(win7以后有)
+                zsh
+
+//2- 硬件系统(冯诺依曼体系):cpu 内存 硬盘  i/o设备(输入输出系统) 主板
+</code></pre><p>3 为什么要学习bash?<br>    bash是shell的一种,因为bash可以提供linux命令的运行环境,git需要在linux环境下去运行,所以,先学习了bash,git才能够更好的实现.<br>    bash就是为git提供了一个运行环境.<br>    bash是所有linux下自带的命令行shell,</p>
+<p>4 bash的基本命令使用<br>    //1- 命令的基本语法<br>        命令名称[-选项] [参数]</p>
+<pre><code>//2- cd 
+    全称:change directory
+    功能:改变当前所在的目录
+    cd 文件夹路径
+
+//3- ~指的就是当前用户的用户根目录 
+    == /c/users/当前用户的用户名/
+
+    .. 指的就是上级目录
+
+    . 指的就是当前目录 
+
+//4 pwd 
+    全称:print work directory
+    功能:打印当前所在的目录
+
+//5 ls 
+    全称:list 
+    功能:展示当前目录下所有的内容信息
+
+    有参数的情况:ls 文件夹路径
+    功能:不切换文件夹,就直接展示指定的文件夹下的所有的文件信息
+
+    有选项的情况:
+    ls -a
+    功能:隐藏文件夹也可以显示出来 
+    ls - l :
+    功能:将文件夹的所有内容列表展示详细信息
+
+    ls -al :展示文件下所有的文件详细信息
+
+    - 文件
+    d 文件夹
+    l 快捷方式
+    rwxrwxrwx
+    1 用户组
+</code></pre><p>5 文件操作<br>    //1- touch<br>        功能:新建文件<br>        用法:<br>        (1) 在当前目录下创建文件<br>            touch 文件名<br>        (2) 在指定目录下创建文件<br>            touch /路径/文件名</p>
+<pre><code>//2- mkdir 
+    全称:make directory
+    功能:创建文件夹 
+    (1) 在当前目录下创建文件夹
+        mkdir 文件名
+    (2) 在指定目录下创建文件夹
+        mkdir /路径/文件名
+
+//3- rm 
+    全称:remove
+    功能:删除文件(删除的文件不能撤销的)
+    (1) 在当前目录下删除文件
+        rm 文件名
+    (2) 在指定目录下删除文件
+        rm /路径/文件名
+
+    (3) rm -r 文件夹名称:可以删除非空文件夹
+
+    (4) rm -f -r 文件夹名称:可以用来强制删除
+
+//4- rmdir 
+    全称:remove directory
+    功能:删除空文件夹(如果文件夹中有内容,则无法删除)
+    (1) 在当前目录下删除文件夹
+        rmdir 文件名
+    (2) 在指定目录下删除文件夹
+        rmdir /路径/文件名
+
+//5- cp 
+    全称:copy 
+    功能:复制文件 
+    用法: cp 被复制文件 要复制到哪里去
+
+    (1) cp -r :复制文件夹
+
+//6- mv 
+    全称:move
+    功能:移动文件
+    用法: mv 被移动的文件夹 要移动的哪里
+
+    常用于重命名: mv test1/2.txt test1/3.txt
+
+//7- 清空屏幕
+    clear :清空屏幕(只是滚动滚动条)
+    reset :清空屏幕(真的清空)
+
+//8- 显示命令(查看文件内容)
+    (1) cat 文件名  (一次性将文件中所有的内容全部展示出来)
+    功能:显示文件里面内容 
+    (2) less 文件名(更少的显示) 
+        功能:一页一页的展示
+        空格或者enter: 换页
+        q:退出阅读
+
+//9 在文件中写东西
+
+    (1)echo 
+        功能:将制定内容输出去到屏幕上
+
+    (2)重定向 
+
+    &gt;:覆盖操作
+
+    &gt;&gt;:追加
+
+//10 (1) tab键可以自动补全  或者找出所有对应的内容
+     (2) 方向键 上方向可以查找历史
+</code></pre><p>6 vi 编辑器介绍(神之编辑器: vim现在自带的都是vim)<br>    vi是一个编辑器,就类似于windows图形化shell中的记事本,所有的linux 系统都会默认自带这个编辑器,通常文本的编辑工作,如果没有别的编辑器可用,就直接使用vi</p>
+<pre><code>emacs:编辑器之神
+
+//1- 基本使用
+    (1) vi [文件名]
+        可以通过vi后面跟上参数来打开指定的文件来编辑,文件名如果存在,就是编辑操作,如果文件名对应文件不存在,就是新建;
+        也可以不跟参数,只是单纯的打开
+
+    (2) vi编辑器模式介绍
+        //1- 普通模式(默认)
+            普通模式下,无法进行内容编辑,普通模式下,每个按键都会对应自己的命令
+        //2- 插入模式
+            插入模式下,我们可以像使用正常的编辑器一样,去编辑内容
+        //3- 命令模式 
+            可以输入不同的命令,来实现不同的功能
+
+    (3) 模式间的切换
+        1 普通--&gt;插入
+            i i键代表insert(在当前字母前,输入的内容在前面)
+
+            I :在当前行最前面插入
+
+            a a键代表append(在当前字母后,输入的内容在后面)
+
+            A :在当前行最后面插入
+
+        2 插入--&gt;普通
+            esc键 退出
+            ctrl + [ 也可以退出
+
+        3 普通--&gt;命令
+            : 就可以
+
+        4 命令--&gt;普通 
+            两次esc 或者删掉&quot;:&quot;
+
+        5 插入和命令不能直接切换,需要转成普通模式进行切换
+
+    (4) 普通模式
+        每个按键都有自己的功能
+        //1- 删除功能
+            dd 删除光标所在的一整行
+            dw 删除光标坐在的后面的一个单词
+
+        //2- 撤销
+            u 
+
+        //3- 开一个新行
+            o 在光标所在的行的下面开一个新行
+
+            O 在光标所在的行的上面开一个新行
+
+        //4- 复制 
+            yy 复制光标所在的行 yank
+            yw 复制一个单词
+
+        //5- 粘贴
+            p 粘贴  paste
+
+        //6- 光标移动
+            1. 方向键(不推荐)
+            2. h j k l (可以配合d使用,删除)
+            3. w(下一个单词)e(当前单词)b(回到上一个单词)
+
+        //7- 重复命令
+            数字 + 命令
+
+            100 i 
+
+    (5) 插入模式
+        和普通编辑器一样
+
+    (6) 命令模式
+        保存 : w 加文件名
+        退出: q
+        保存并退出 : :wq
+
+        如果使用的vi直接没有指定文件名进入编辑器,那么保存的时候需要指定文件名;
+        :w 文件名
+        如果使用的是vi文件名进入编辑器,那么保存的时候直接:w
+
+        如果修改了文件内容之后,没有保存直接:q无法退出,所以需要先:w,再:q
+
+        如果实在不想保存: q!
+
+        如果编辑器非正常退出,比如直接点击了窗口的关闭按钮,那么下次进去编辑器编辑刚才的文件的时候,会出现报错,解决方法就是,直接将生成的xx.swp文件删除,重新打开编辑器就可以了;
+
+    重点内容:
+        如何模式切换(普通模式进去插入模式)
+        如何推出去
+</code></pre><p>7 版本控制工具(vcs : version control system 记录所有的修改历史版本,方便日后恢复到指定的修改的版本)</p>
+<pre><code>版本控制工具,会将对文件的每一次修改,都会当做是一个新的版本,在版本控制工具中,有一个叫做版本库的东西,里面存放着,所有的版本号和当前版本的文件内容;
+
+版本控制工具可以非常方便的帮我们记录每一次的修改操作,修改的状态也会保存下来,方便以后随时对于修改的内容的恢复;  
+
+现在版本控制还多了一个功能,就是代码合并;
+</code></pre><p>8 版本控制工具的分类</p>
+<pre><code>//1- 本地式的版本控制系统(只适合单人开发)
+    版本库存放在本地,只有本地才会有所有版本的历史记录,这种版本控制系统,只适合于单人开发;
+
+//2- 集中式的版本控制系统(代表: SVN 离了服务器是不能开发的)
+    版本库,集中存放在源代码服务器上,所有人修改的历史,都会提交到服务器;
+
+//3- 分布式的版本控制系统(代表: Git
+    在自己电脑上有个版本库,然后通过版本库共享服务器,每个人共享版本,不完全依赖于网络,有个版本库共享服务器)
+    版本库,分别存储在不同的程序员的不同的项目中,一个项目中可能包含多个版本库,如果程序员之间想要共享版本库,需要通过版本库共享服务器;
+
+//4- 版本控制工具,主要的功能为:记录修改历史,共享代码!
+
+    vss   TFS  (微软自家的收费)  git-swn
+    Visual Studio(宇宙第一IDE)
+
+    IDE:intergrated development environment 集成开发环境
+    编辑器: 只提供一个代码编辑的功能
+</code></pre><p>9 git的基本使用</p>
+<pre><code>//配置git的用户以及邮箱(一台电脑只需要配置一次)
+    (1) 配置用户名
+        git config --global user.name &quot;sunchen&quot;
+
+    (2) 配置用户邮箱
+        git config --global user.email &quot;782214911@qq.com&quot;
+
+//1- git init :使用git在当前文件下创建一个git仓库
+
+    实际就是在当前项目中创建一个git文件夹,这个文件夹是隐藏的,这个文件夹就是用来保存所有版本信息的内容
+
+//2- git add:将文件追踪起来
+
+    (1) 同时追踪多个文件: git 要追踪的文件名 
+
+    (2) 追踪当前文件夹下所有文件: git add * 或者 git add -A(常用) 或者 git add . 
+
+//3- git commit -m &quot;这里添加当前生成版本的说明信息&lt;新建 or 删除 or 修改&gt;&quot; : -m提示信息
+
+    其中会出现warning:提示就是windows回车换行和linux换行不一样,不用在意
+
+    多行提示信息  可以用vi 
+
+//4- git status :查看当前文件的状态 
+
+//5- git log:日志  
+    查看已经提交的所有的版本信息
+    commit:版本号
+
+//6- git checkout 
+    将暂存区的文件恢复到工作目录中
+
+//7- git reset --hard 版本号  恢复到某个版本
+    作用: 从版本库恢复指定版本的代码到工作目录
+
+    版本号 可以使用 git log查看复制 
+</code></pre><p>10 补充<br>    (1)同时创建几个文件夹:<br>         mkdir 文件夹1 文件夹2 </p>
+<pre><code>(2)同时创建多个文件 在不同的文件夹里 
+    文件夹名/文件名
+
+(3)git 同时追踪多个文件
+    追踪全部文件: git add * 或者 git add -A
+
+(4)删除和修改都需要提交新版本
+    通过 git add  和 git commit -m 操作
+</code></pre><p>11 git 原理<br>​<br>    项目文件夹<br>        (1) 工作目录<br>            作用:就是在当前文件夹所看到的所有内容(项目文件存放的位置)</p>
+<pre><code>(2) .git文件夹
+
+    //1- 暂存区
+        作用:对文件有一个集中的管理,先将所有修改的文件存储,统一提交,生成新版本
+
+        通过git add就会将文件添加到这个暂存区
+
+    //2- 版本库
+        作用:存放版本历史信息的位置
+
+        git add -A :将工作目录中所有的文件放到暂存区
+
+        git commit -m :将暂存区的内容提交到版本库,生成新版本 (提交后暂存区的内容全都清空)
+
+        git checkout :从暂存区中的内容取出来放到了工作目录
+
+        git reset --hard 是将版本库中指定版本的内容获取出来放到工作目录
+
+        git就是将各个文件在各个区之间进行流转;
+</code></pre><p>12 文件状态<br>    //1- 新添加一个文件,属于 未追踪的状态   untracked<br>    //2- 将已经追踪的文件修改之后,属于 已修改状态 modified<br>    //2- 将已经追踪的文件删除之后,属于 已删除状态<br>    //4- 将所有未追踪 已修改的文件进行一次git add 操作之后,文件的状态会变成 待提交  staged<br>    //5- 当执行一次git commit操作之后,所有的文件状态都是已提交  commited</p>
+<p>13 git在实际工作中可能会出现的状况</p>
+<pre><code>1. 获取源代码 
+    *项目经理,会给你提供一个源代码服务器地址
+    *需要你提供一个公钥
+
+2. 通过git之类的源代码管理工具,从源代码服务器中获取项目源代码
+    git clone + 远程代码服务器地址
+    可以将远程服务器的代码获取到本地
+
+    git push origin master :提交新版本到服务器
+
+
+3. github和git的关系? 
+    要操作githhub上的源代码,就需要使用git;
+</code></pre><p>//复习<br>    //1- git的三个区 四个状态<br>        三个区:工作目录 暂存区 git仓库<br>        四个状态: 未追踪:untracked  已提交:commited  已修改:modified  已暂存:staged</p>
+<p>//============第二天============================</p>
+<p>1 复习<br>    (1)s 修改光标所在的字母,同时进入插入模式<br>    (2)c change也可以进去插入模式<br>    (3)dos:磁盘操作系统  即cmd  shell命令的一种<br>        cmd的几个命令介绍:<br>            //1- ping :测试网速(还可以用来dos攻击)<br>            //2- Nslookup : 查询ip地址<br>            //3- ipconfig /all</p>
+<pre><code>(4) shell  
+    图形化shell
+    命令行shell
+
+    bash是shell的一种,linux系统自带
+    我们装bash是因为git只能在bash中运行的
+
+(5) bash的基本命令
+    cd 
+    pwd
+    ls [-a] [-l]
+    touch
+    mkdir
+    rm [-r]
+    rmdir
+    cp
+    mv
+    cat
+    less
+    echo
+    &lt;
+    &lt;&lt;
+
+(6) vi 
+    三种模式:
+        普通模式
+        插入模式
+        命令模式
+
+(7) 版本控制工具(vcs:version control system)
+    本地版本控制工具
+    集中式版本控制工具(svn)
+    分布式版本控制工具(git)
+
+(8) git (分布式版本控制工具)
+
+    1 配置用户名和邮箱
+        git config --global user.name &quot;&quot;
+        git config --global user.email &quot;&quot;
+
+    2 初始化仓库
+        git init
+
+    3. 追踪
+        git add 文件名
+        git add -A 或 * 或 .
+
+    4. 更新版本
+        git commit -m &quot;&quot;
+
+    4. 查看状态
+        git status 
+
+    5. git log 
+
+    6. git checkout
+
+    7.git reset --hard 版本号
+
+工作目录(版本库的展示窗口)
+暂存区
+版本区
+</code></pre><p>​            </p>
+<p>2 分支介绍<br>    //1- 问题 多任务并行开发的时候,避免不了多个任务之间相互影响,我们也可以采用备份文件夹的方式来避免影响,但是这种方式也不可取,因为一旦任务过多,文件夹数列也会增多不容易维护,最终代码合并也会出现问题</p>
+<pre><code>//2- 分支 
+    git中有个内容,叫做分支,分支的作用,就是和我们备份一个文件夹的功能一致,就是对当前的代码进行备份
+
+//3- 分支使用
+
+    (1) 创建分支(开始写具体任务之前)
+        git branch 分支名
+
+        就是相当于 在版本库中又备份了一份
+
+        //1- git branch :不加分支名,就是查看所有的分支
+
+            login
+            * master  : 主分支
+                        *表示当前所在哪个分支
+
+        //2- git checkout login(分支名称) :切换分支到login
+
+        //3- git add 和 git commit -m 
+            后是在login上创建了版本2,主分支上没有login
+
+        //4- git checkout master 切换到主线程
+
+        //5- git branch register 
+            重新创建分支注册 
+
+        //6- git checkout register 切换分支
+
+        //7- 具体操作完成  
+            将register上的东西合并到主分支上
+
+        //8- 切换到主分支上
+            git checkout master
+
+        //9- git merge register 
+            合并到主分支上   
+
+        //10- 再切换到login上继续完成未完成的操作
+
+        git checkout login 
+
+        //11- 做完后,合并到主分支上 ,如果继续使用 git merge login 会出现冲突 主要是account.js 重复 
+
+        修改代码  重新修改
+
+        //12- git commit -m&quot;&quot;更新状态
+
+
+        //冲突问题
+            分支a中创建了文件xx.txt,分支b中也创建了xx.txt,那么git就会发现,有两个同名的文件,这时候,就是冲突产生了,冲突产生之后,合并会失败,需要先将冲突解决了,再次提交,才能正常合并;
+
+        //解决冲突
+            冲突产生之后,git会告知哪个文件冲突了,然后在文件中会用 &gt;&gt;&gt;&gt; ==== &lt;&lt;&lt; 这样的方式将冲突的内容标记出来,我们只需要将标记删除,然后将代码改成自己想要的结果,再次add commit 即可.
+            (实际工作中很少有冲突,产生冲突一般情况下不由我们解决)
+
+        //分支使用原则 
+            只要有新的任务,就开辟一个新的分支去做,做完之后,将分支合并回去就可以了.
+
+            创建分支可以在不同的分支上创建;
+
+        //分支删除 
+            (一般不删,除非确定分支不会再使用)
+            git branch -d 分支名
+
+
+        // 创建并切换分支
+
+            git checkout -b 分支名
+
+        //git init时候并没有产生分支,是在git commit -m第一次提交后,才会产生master
+
+        //master分支
+            这个分支,是git默认自动创建的.
+            创建的时机,并不是在git init之后才有的,而是在第一次提交commit时产生的
+
+        //master分支不存在的时候,不能创建别的分支;如果将master删除,不会再自动创建master
+
+
+    (2)分支注意事项
+        //1- 在某个分支上修改文件后,不add,不commit,直接切换分支,切换不掉分支,必须先提交
+        //2- 如果新建一个文件,切换分支,可以切换分支; 
+        //3- 分支切换要注意事项,必须先将所有的更改,做一次提交后,再切换分支.
+</code></pre><p>3 回滚操作的恢复操作,即切换版本后,如何找回?<br>    //1- git log -g :找回所有的日志,找到要回到哪个版本的版本号</p>
+<pre><code>//2- git branch 自定义名字 版本号 (将要找回的所有内容添加到新建的分支里,再合并到主分支就可以了)
+</code></pre><p>4 远程仓库<br>    //1- git 是一个分布式的版本控制工具,特点,就是版本库存放在本地.</p>
+<pre><code>//2- 远程仓库作用:共享版本库
+
+//3- 远程仓库的创建 (模拟)
+    (1) 远程仓库其实就是一个裸仓库
+    (2) 裸仓库 
+        //1- 创建裸仓库
+            git init --bare 
+            与git的却别,裸仓库外边不需要git文件夹包裹;
+            因为裸仓库不需要做开发,所以不需要工作目录;裸仓库操作完成后就不需要做任何操作,在裸仓库中不能进行开发工作;
+
+        //2- 给裸仓库添加内容
+            远程仓库名字规范:remote.git
+            git push 远程仓库的地址 ../remote.git/ master:master&lt;自己的分支名称:远程的分支名称&gt;
+
+            如果本地分支名称和远程分支名称相同,name可以缩写如下:
+            git push 远程仓库的地址 ../remote.git/ master
+
+
+        //3- 从远程仓库中获取东西
+            git clone remote.git/ programeA(文件夹名) 
+
+            文件夹名称也可以不写,默认就是远程仓库的文件夹名称.
+
+        //4- 注意事项
+            (1) 只有在远程仓库中从未推送过内容时,才能随意推送;
+
+            (2) 但是只要推送过一次内容,就不能随意向远程仓库推送内容,能推送的只能是和第一次推送相关的修改的内容.
+
+        //5- 获取远程仓库中跟新了的内容 
+            git pull 远程仓库地址 分支名称
+
+        //6- 每次向远程仓库推送内容之前(push),一定要先获取远程仓库中最新的内容(pull操作)
+</code></pre><p>5 github 全球最大的开放源代码托管平台<br>    github其实就是远程仓库.</p>
+<pre><code>//1- 往github上上传以及获取内容
+
+    git push git地址 分支名称
+
+    git clone git地址 [文件名] 不写默认就是被克隆的文件名 
+</code></pre><p>6 远程仓库地址别名</p>
+<pre><code>//1- 远程仓库地址过长,不容易记忆,所以每次向服务器提交新内容的时候,都需要重新查看一次远程仓库地址,非常麻烦,我们可以为每个远程仓库地址,设置一个简单的别名
+
+//2- git remote add 别名 远程仓库地址
+
+//3- 查看所有的远程地址别名
+    git remote 
+
+    (1) origin别名
+        如果是直接通过git init创建的仓库,那么这个仓库中是不会有origin的别名的;
+
+    (2) 如果仓库是通过git clone从远程仓库中获取的内容,
+        那么这个仓库中会自动创建一个origin别名,origin指向的就是clone仓库的地址;
+
+//4- 删除别名 
+    git remote remove 别名
+
+//5- 重命名别名
+    git remote rename 旧别名 新别名
+
+//6- 获取别名对应的地址
+    git remote get-url 别名
+
+//7- 设置别名对应的地址
+    git remote set-url 别名
+</code></pre><p>7 ssh协议<br>    //1- 概念:secure shell<br>        用作客户端和服务器通信的时候的一个安全的协议,一般用作服务器的远程管理;</p>
+<pre><code>    对于用户和服务器之间的交互进行了一层加密,别人可以拿到数据,但是看不懂数据的意思
+
+    http协议:浏览器和服务器之间的信息交流
+
+//2- 加密算法分类: 
+    (1) 对称性加密(通过秘钥进行操作,用户和服务器用的相同秘钥) 
+    (2) 分类性加密(用户和服务器用的是不同的秘钥,分别有私钥和公钥,私钥不能发给别人) 
+
+//3- ssh工具
+    在linux系统下,提供了一个工具,ssh这个工具可以通过ssh协议连接到服务器,并对服务器进行远程管理
+
+//4- ssh的协议格式
+    用户名@服务器的地址
+
+//5- github也可以提供一种ssh链接,实现服务器免密登陆;
+    用户名@服务器的地址
+
+//6- 公钥以及私钥的生成(gen==generate)
+    1 通过ssh-keygen命令就可以生成公钥和私钥
+
+    ssh-keygen -t rsa
+
+//7- 服务器免密登陆的设置步骤
+
+    (1) 生成公钥和私钥
+    (2) 在服务器的 ~/.ssh/authorized_keys中将生成的公钥中的所有内容追加里面去
+    (3) 再次登陆服务器就不需要密码了
+
+//8- github免密推送设置
+    (1) github提供了两种推送和获取代码的协议
+        //1- https
+        //2- ssh
+
+    (2) ssh协议:git@github.com:sunchen0912/BoXueGu.git
+
+    (3) 只要使用ssh协议就需要将
+
+    (4) 免密设置步骤 
+
+        1 如果从未生成过秘钥,先生成秘钥文件
+            ssh-keygen -t rsa 
+        2 打开github ,点击个人头像,选择settings 
+        3 选中 ssh and gog keys
+        4 点击 右上角 new ssh key
+        5 打开自己的公钥文件,复制内容粘贴到key的文本框中
+        6 点击add ssh key按钮
+        8 以后再本机使用github的时候,直接使用ssh协议的连接,就可以实现免密功能了.
+
+    (5) 只有使用ssh协议的链接,才能实现免密登陆
+
+    (6) 只能在自己的github里面实现免密登陆
+
+    (7) 实际工作中,一般都是ssh链接,需要自己将公钥发给pm,让他帮自己设置下公钥,这样就可以免密下载公司文件;
+
+    (8) clone使用https协议是不需要密码的,而使用ssh就需要密码
+
+//9- github实现网页展示,静态页面托管
+
+    (1) 创建新的项目
+    (2) 项目名称 : 用户名.github.io
+    (3) 将自己写好的项目直接推送到这个github仓库中
+    (4) 通过用户名.github.io地址就可以直接访问页面了;
+</code></pre><p>8 使用hexo和github搭建个人博客</p>
+<pre><code>1. 安装node.js
+2. 通过npm下载hexo
+    npm install hexo-cli -g
+
+3. 上面异步完成之后,就有一个命令就可以使用了,hexo.
+4. hexo init 初始化一个博客
+5. hexo s 本地预览博客
+6. hexo new &quot;文件名&quot;
+7. 标签的格式 tags: -JavaScript
+                    -study
+              categories: -studynote
+
+8. hexo g :写完后的md生成为html文件,目录为当前文件下的public目录
+
+9.所有生成的文件都在一个public文件夹中,上传到github中
+
+10.和上面一个操作一样,github静态页面托管就可以,将public文件夹推送到github上就可以了 
+
+11. hexo官网中有好多主体 them 
+
+12. 以后要写文章,只需要hexo new 和 hexo g 就可以了
+</code></pre><p>9 总结<br>    分支(只要有新任务就要分支)<br>        1.git branch 分支名称<br>            git checkout -b 分支名称 (创建并切换)</p>
+<pre><code>    2.git checkout 
+
+    3.git branch -d 
+
+    4.git merge 
+
+    5.git log -g
+      git branch 分支名称 版本号
+
+远程仓库(共享源代码)
+    1. git init --bare
+
+    2. git push 远程仓库地址 本地分支名:远程分支名
+
+    3. git clone 远程仓库地址 [文件夹名称]
+
+    4. git pull 远程仓库地址 分支名称(默认分支master)
+
+    5. 在push之前一定要先pull
+
+远程地址别名设置
+    1. git remote add 别名 远程仓库地址
+    2. git remote remove
+    3. git remote rename 旧名 新名
+    4. git remote get-url 远程仓库地址
+    5. git remote set-url 远程仓库地址
+
+github的免密登陆设置
+    1. 生成秘钥对(一个电脑执行一次就行)
+        ssh-keygen -t rsa 一路回车 冒泡就成功了
+    2. 在github的设置中,添加一个ssh key
+    3.key中的内容就是将生成的公钥内容粘贴进去就可以了
+    4.以后使用github的时候,直接(只有)使用ssh链接就可以实现免密
+
+github静态页面
+    1.在github中创建一个仓库
+    2.仓库名字必须是 用户名.github.io
+    3.将写好的静态页面push到这个仓库
+    4.通过用户名.github.io 这个地址就可以访问网站了
+    注意:一个账号只能有一个静态页面管理
+
+gitignore:直接创建一个.gitignore  将不要有管理的文件名字写到gitignore中
+</code></pre><p>//==========第三天===============<br>1.复习<br>    //1- 合并分支:如果两个分支内容一样,会提示already up to date;<br>    合并分支前需要提交</p>
+<pre><code>//2- 分支 
+    作用:在多任务并行开发的时候,就需要使用
+
+    创建:
+        git branch 分支名
+        git checkout -b 分支名
+
+    切换: git checkout 分支名(如果分支名和暂存区文件重名,会切换到分支,分支的权限高,一般情况下不要重名)
+
+    合并:git merge 分支名
+
+    删除:git branch -d 分支名称
+
+//3- 远程仓库
+    作用:代码共享
+    创建: git init --bare (一般是pm做,日常不需要我们自己做)
+
+    推送:git push 远程仓库地址 本地分支名称:远程分支名称 
+
+    获取:全部 git clone 远程仓库地址 [文件名]
+        最新内容 git pull 远程仓库地址 远程分支名
+
+//github 码云 全球最大的开放源代码托管平台 
+
+    ssh key
+    1 生成秘钥 
+        ssh keygen -t rsa 
+        (一般去公司,第一件事就是生产公钥,发送给pm,一般在用户根目录下的.shh文件里的 .id_rsa.pub文件)
+
+    2 添加到github设置中
+    3 在使用ssh协议操作github上的远程仓库的时候,就不要用户名和密码 
+</code></pre><p>2 公司人员组成</p>
+<pre><code>//1- 产品经理 (pm: product manager) 0-3 
+     职责:负责和客户接洽,整合客户所有的需求
+     产出:项目需求文档 项目原型图(Axure RP绘制)
+
+//2- ui  1-0 (没有就外包)
+     职责:根据产品经理给出的原型图,设计出指定的设计风格的psd图
+     产出:psd图
+
+//3- 后端  10-15
+     职责:根据产品经理给出的需求文档以及原型图,设计出数据库结构,书写后台数据接口;
+     产出:接口以及接口文档
+
+//4- 前端  3 
+     职责:根据ui给出的psd图,切html页面,实现页面中的各项特效以及交互效果;
+     负责请求接口,获取数据,在前端显示指定的数据等各项数据操作;
+     (一般都是原型图出来就可以先写结构,等psd出来,进行优化)
+     产出:页面
+
+//5- 测试 0-3
+     职责:找bug
+     (大公司有bug提交系统,小公司没有直接当面说)
+
+//6- 运维(运营与维护)上线  0-1 
+     职责:产品的线上运营与维护 项目的发布 项目的实际运行 
+</code></pre><p>3 前端开发模式<br>    //1- 前后端混合开发<br>        前端:负责写出静态页面,所有跟数据相关的事情全都不用管<br>        后端:负责写后台业务逻辑,拿到前端静态页面之后,和后台代码进行整合,实现所有的数据交互</p>
+<pre><code>//2- 前后端半混合开发
+    前端:负责写出静态页面,负责部分数据相关内容
+    后端:负责写后台业务逻辑,拿到前端静态页面之后,和后台代码进行整合,实现所有的数据交互
+
+//3- 前后端完全分离开发(趋势)
+    前端:负责静态页面,负责页面中全部的数据交互内容(ajax)
+    后端:只负责提供接口
+</code></pre><p>4 博学谷项目  用户名 : 前端学院 密码:1234</p>
+<pre><code>//1- 讲师管理模块
+//2- 个人中心模块
+//3- 课程管理模块
+
+//4- 为什么要有admin文件夹?
+    因为我们只做了一部分后台管理系统,把项目的结构划分开
+
+    我们这里没有别的项目,直接拿出来,studyit
+
+//5- 
+    assets:第三方所有的资源都放在这个文件夹(插件或库)
+     upload:上传的东西放这个文件夹下
+
+//6- 静态页面不要直接放在根目录里面,进行文件夹划分(方便日后维护)
+    按照功能模块划分: 讲师管理 个人中心 课程管理
+    文件的名称前面都有前缀即功能分类,按照这个划分
+
+//7- 把不变的img 什么不变的放到 static
+      dashboard:仪表盘 将 index login repass settings 放入dash board (个人习惯)
+
+//8- 一般项目部署好后,都会在本地部署一个本地服务器,开发环境,模拟一个网页预览;
+</code></pre><p>5 本地测试环境的搭建<br>    //1- 为什么要搭建?<br>        因为开发过程当中,我们需要对当前开发的内容效果做预览,但是又不能直接将开发了一半的内容提交到公司服务器,所以需要一个本地的测试服务器,来运行当前项目以达到预览效果;</p>
+<pre><code>//2- live-sever(只能访问纯静态页面(html,js,css)只适合前后端完全分离的)
+    live-sever是基于node.js编写的一个建议的静态网页服务器;
+
+    安装: npm install live-server -g
+    运行:打开网站的根目录(网页所在的目录)
+    在当前目录中打开bash 运行live sever
+
+//3- browser-sync 
+
+//4- http-sever
+
+//5- WAMP 
+
+//注意: file协议肯定跨域
+</code></pre><p>6 博学谷项目完全分离开发<br>    可以使用本地测试服务器,不需要后台帮助搭建测试环境</p>
+<p>7 WAMP  (window apache mysql php)<br>    //1- 概念:其实就是整合了服务器环境需要的三大内容的一个集成测试服务器环境.</p>
+<pre><code>//2- 服务器和浏览器的关系
+    (1) 获取域名对应的ip地址的过程
+        //1- 先去hosts文件中找有没有域名对应的ip,不过hosts文件中有就是用对应的ip;如果没有就去dns服务器找,找完之后从dns服务器返回ip地址;如果dns服务器中没有访问的域名的记录,那么网站将不能访问;
+
+        hosts优先级比较高
+
+
+//3- wamp 
+    (1) 服务器中包含:
+        apache
+        php
+        mysql
+
+    (2) 浏览器向服务器发送请求,当请求信息到达服务器端的时候,apache会接受到这个请求,apache通过http协议,解析这个请求的详细内容: / 表示网站根目录
+    协议名://域名:端口号/路径?key=value
+
+    (3) 请求html文件(静态资源)和php文件(动态文件)的区别?
+        如果请求的仅是个html文件(静态资源),则不需要使用php 和 mysql,直接在网站目录中找到这个资源返回给浏览器;
+
+        当请求的是一个php文件,首先apache根据路径找到这个php文件(动态资源),调用这个php模块,将这个php中的代码在后台执行完毕后,将执行后的结果返回给浏览器;
+
+//补充:
+    dns:  存的是 域名:ip
+    hosts文件 : 也会有 域名:ip 
+                先去hosts文件中找有没有域名对应的ip,不过hosts文件中有就是用对应的ip;
+                如果没有就去dns服务器找,找完之后从dns服务器返回ip地址;
+                hosts优先级比较高
+
+    设置hosts文件:c/windows/system32/drivers/etc
+    由于系统权限问题:某些电脑会遇到更改hosts文件之后,无法保存,将修改后的内容先另存到桌面,再拖回源文件夹,覆盖;
+
+    如果要在hosts中新增域名和ip对应的关系,只需要在hosts文件中添加如下代码:ip地址 域名
+                123.125.114.144 taobao.com
+                58.83.230.159 jd.com
+
+    注意:hosts文件修改之后,这个域名只能在本电脑生效;
+</code></pre><p>8 WAMP配置,完成开发环境的搭建<br>    //1- hosts文件的配置<br>        在hosts文件中自己添加一个假的域名,来指向我们将要开发的网站,就有一个假象的域名;</p>
+<pre><code>    1. 打开hosts文件
+    2. 添加两行信息
+        127.0.0.1 www.study.com
+        127.0.0.1 study.com
+
+//2- wamp配置
+    1. 配置网站根目录(默认根目录)
+        //1- 打开wamp的配置文件
+            1 wamp的配置文件目录:httpd.conf
+            2 搜索 DocumentRoot
+            3 将后面的双引号中的内容改成 想要做为网站根目录的文件夹的路径
+            4 将路径中的&quot;\&quot;全部换成&quot;/&quot;
+
+        //2- 配置根目录的权限(即告诉apache如果有请求去哪个文件夹找内容)
+            1 打开wamp的配置文件(&quot;httpd.conf&quot;)
+            2 找到&lt;Directory &quot;c:/wamp/www/&quot;&gt;
+            3 将双引号中的内容 改成想要作为做为网站根目录的文件夹的路径
+            4 将路径中的&quot;\&quot;全部换成&quot;/&quot;
+            5 &lt;Directory &quot;c:/wamp/www/&quot;&gt;节点中的内容全部按照以下配置,老师笔记 todo
+             Options Indexes FollowSymLinks
+             AllowOverride all
+             Order Deny,Allow
+             Allow from all
+
+             可以一个ip(服务器)对应多个域名,即一个服务器里分别有多个目录,需要为每一个域名单独配置一个根目录(即文件夹);
+
+        //3- 配置虚拟主机(virtual host 即vhost)
+            vhost的配置中,就是将域名和网站目录路径一一对应,告诉apache当有指定的域名访问某个网站时,去那个目录去找对应文件;
+            如果设置了这个,则我们在c盘中hosts中设置的不起作用了;
+
+            如何配置:
+                1 打开wamp配置文件 
+                2 搜索 vhosts 
+                    # Virtual hosts
+                    # Include conf/extra/httpd-vhosts.conf   删除这行的井号
+
+                3 找到vhosts文件
+
+                4 找到如下内容 修改 
+                &lt;VirtualHost *:80&gt;
+                    DocumentRoot &quot;域名根目录的路径&quot;
+                    ServerName 域名(不带www的)
+                    ServerAlias www.域名别名
+                    ErrorLog &quot;logs/dummy-host2.example.com-error.log&quot;
+                    CustomLog &quot;logs/dummy-host2.example.com-access.log&quot; common
+                &lt;/VirtualHost&gt;
+
+                &lt;Directory &quot;域名根目录的路径&quot;&gt;
+                    Options Indexes FollowSymLinks
+                    AllowOverride all
+                    Order Deny,Allow
+                    Allow from all
+                &lt;/Directory&gt;
+
+                5 重启wamp 
+
+                6 如果需要添加新的域名,可以重复上面4的操作
+</code></pre><p>9     将一个html插入到另一个html文件(公共部分复用)?<br>​<br>    (1) jquery load方法(实际上用的人少,用户体验不好)</p>
+<pre><code>    &amp;(function(){
+
+        $(&quot;#nav&quot;).load(../文件路径)
+    })
+(2) 模板引擎 (pug)
+
+(3) 公共部分提取:由于网站中所有的页面使用的侧边栏和头部都是一样的,所以我们可以将这两部分提取出来作为公共部分,在通过一定的手段,将其引入所有的页面中;方便日后维护,如果日后需要修改只要将公共部分修改一次就可以了
+</code></pre><p>10 php技术<br>    //1- 使用php之前,访问网站页面的方式:<a href="http://study.com/文件夹名称/文件名.html" target="_blank" rel="external">http://study.com/文件夹名称/文件名.html</a><br>        这种方式,只能访问静态页面,就算有php代码,那么apache也不会去调用php模块来执行这些代码;</p>
+<pre><code>//2- 解决方案
+    我们可以在网站根目录中新增一个index.php
+
+    最开始的链接形式:http://study.com/index.php/文件夹名称/文件名
+    这个文件的职责(作用),就是找文件,每次对于网页的请求,都是发送给index.php,他可以通过分析链接最后的部分 &quot;文件夹名称/文件名&quot;, 确定用户要请求的是哪个文件,然后通过php代码将这个文件招过来,返回给浏览器;
+</code></pre><p>11 省略链接中的index.php<br>    当前链接为:<a href="http://study.com/index.php/文件夹名/文件名" target="_blank" rel="external">http://study.com/index.php/文件夹名/文件名</a><br>    想要:<a href="http://study.com/文件夹名/文件" target="_blank" rel="external">http://study.com/文件夹名/文件</a></p>
+<pre><code>wamp配置 :
+1 打开wamp httpd.conf
+2 找到 
+    #LoadModule rewrite_module modules/mod_rewrite.so
+    去掉#
+3 保存重启
+4 将.htaccess文件放到网站根目录,和index.php放在一起
+</code></pre><p>12 总结<br>    //1- 公司人员组成(项目开发流程)<br>    //2- 前后端开发模式<br>    //3- hosts文件<br>    //4- wamp的配置</p>
+<pre><code>1. 配置文件的目录
+
+    c:\wamp\bin\apache\apache2.2.21\conf
+
+   常用的配置文件
+
+    httpd.conf
+    extra/httpd-vhosts.conf
+
+2. 基础根目录配置（可选配置）
+
+    1. 打开httpd.conf
+    2. 配置documentroot
+    3. 配置目录权限 
+
+3. 虚拟主机配置
+
+    作用： 为每一个域名对应一个自己的根目录！！！
+
+    1. 打开httpd.conf
+    2. 找到vhosts那行 去掉前面的#
+
+    #Include conf/extra/httpd-vhosts.conf
+
+    3. 打开extra/httpd-vhosts.conf
+    4. 在最后粘贴如下的代码
+
+        &lt;VirtualHost *:80&gt;
+            DocumentRoot &quot;域名对应的根目录的路径&quot;
+            ServerName 域名（不带www的域名）
+            ServerAlias 域名的别名（带www的域名）
+            ErrorLog &quot;logs/dummy-host2.example.com-error.log&quot;
+            CustomLog &quot;logs/dummy-host2.example.com-access.log&quot; common
+        &lt;/VirtualHost&gt;
+
+        &lt;Directory &quot;域名对应的根目录的路径&quot;&gt;
+            Options Indexes FollowSymLinks
+            AllowOverride all
+            Order Deny,Allow
+            Allow from all
+        &lt;/Directory&gt;
+
+    5. 重启wamp
+
+4. 省略index.php的配置
+
+    1. 打开httpd.conf
+    2. 找到如下行：去掉前面的#
+
+        #LoadModule rewrite_module modules/mod_rewrite.so
+
+    3. 重启wamp
+    4. 将.htaccess文件放在网站跟目录
+
+5. 文件夹结构的划分
+
+    原则： 按照不同的功能模块，进行文件夹划分
+
+    目的： 方便日后维护！
+
+6. index.php的使用
+
+    目的： 1. 实现公共部分的复用
+
+          2. 可以简化访问网站的连接
+
+    index.php的代码不需要会写，但是需要知道他的功能！！
+
+    你可以认为index.php是一个传达室的老大爷，我们告诉他，我们要找，他就会去帮我们找这个人过来
+
+    我们是如何告诉老大爷，我们要找谁的？？
+
+    连接中最后一部分，就是我们告诉老大爷的信息
+
+        http://studyit.com/index.php/文件夹名/文件名
+
+    路径问题    
+</code></pre><p>//=====第四天=================<br>1 复习<br>    //1- php中的根目录表示 $_SERVER</p>
+<pre><code>    所以php中找对应的文件  
+
+    $_SERVER[&quot;DOCUMENT_ROOT&quot;].&quot;/views/dashboard/index.html&quot;
+
+//2- wamp配置
+    1 使用hosts文件(配置假像域名)
+    2 会配置默认的根目录(httpd.conf文件中的documentRoot)
+    3 会配置vhosts设置项(为每一个域名指定对应的根目录)
+    4 会配置省略index.php(rewrite取消注释,将index.php放在根目录)
+
+//3- 公共部分提取 方便维护
+    1 jq load方法  不建议 会等页面加载好再加载公共部分
+    2 使用php代码引入 
+
+//4- 相对路径和绝对路径
+    1 绝对路径
+        从指定(固定)的目录找文件,
+
+    2 相对路径
+        以当前某个文件或者某个路径作为参照,查找的路径
+
+    3 php中的路径
+        //1- php中 / 具体指向不清楚,使用$_SERVER[&apos;DOCUMENT_ROOT&apos;].&quot;/views/...&quot;
+        //2- php代码负责查找的路径
+
+    4 web中路径
+        //1- web中的相对路径,是浏览器根据当前页面的url进行组合后访问的,浏览器负责查找的路径;
+        //2- 写绝对路径就和url没有关系
+</code></pre><p>2 http协议 (hyper text transfer protocal :超文本传输协议)</p>
+<pre><code>//1- 协议:消息传输的格式(片面的)
+
+//2- 作用:用来在浏览器和服务器之间传递数据;各个程序开发语言,都可以使用hettp协议来传输数据;
+
+//3- 无状态
+     浏览器在和服务器通信的时候,服务器记不住浏览器,也就是浏览器对于服务器的每一次请求,服务器都会认为是一个新的人来请求了.
+
+//4- 无状态问题需要解决
+     浏览器在访问服务器的时候,服务器会给浏览器办法一个令牌,令牌就是浏览器身份的标识,下次浏览器再去访问服务器的时候,将这个令牌带给服务器,name服务器就能够识别这个浏览器的身份了
+
+     如何实现?
+
+     cookie  和 session
+
+//5- cookie  (会泄漏用户隐私,也会慢慢被慢慢淘汰)
+     1 cookie是一个浏览中的存储空间
+         cookie中存储的内容的格式为:
+             key=value; key=value;  分号隔开的键值对
+     2 cookie如何访问
+         document.cookie 就能看到用户的访问信息
+
+         打开浏览器settings /高级设置/内容设置/cookie
+
+     特点:
+         1. cookie有时间限制的,会过期;
+         过期时间是可以手动设置的,如果不设置过期时间,name默认就是浏览器关闭,cookie消失
+
+         2. cookie是以域名为单位进行存储的,不同域名之间是不能相互共享cookie
+
+         3. cookie的存储容量是有限的,每个域名下最多存储4kb内容
+
+        4. cookie是分路径存储的,一个域名下的cookie可以分路径进行存储
+            在子路径下存储的cookie,不能再父路径中访问;
+            父路径中存储的cookie,是可以在子路径中访问的,所以,一般情况下,如果想要在整个域名中共享cookie内容,都会将其存储区在根路径中;
+
+        5. 浏览器每一次发送请求都会将cookie发送给服务器,cookie中的信息,会伴随着每一次请求,发送给服务器,不论什么请求;
+            注意:一般情况下,不会往cookie中存储大量的数据的
+
+        6. cookie不仅可以用在浏览器中操作,也可以在服务器端操作,就是在响应头中添加一个setcookie的内容,浏览器接收到这个相应信息之后,会将对应的内容存入cookie中;
+
+        补充:
+             存储单位
+             bit 
+             Byte = 8bit 
+             kb = 1024Byte
+             MB
+             GB
+             TB
+             EB
+             ZB
+             YB
+
+//6- 通过js操作cookie
+    &lt;script&gt;
+        //1 获取cookie file协议下是不会又cookie
+
+        document.cookie;
+
+        //2 给coolie中添加内容 
+        //注意这个赋值是追加操作,不会将之前有的内容覆盖掉
+        document.cookie = &quot;name=sunchen&quot;;
+        document.cookie = &quot;name2=sunchen2&quot;;
+
+        /*
+            Object.defineProperty方法可以用来给对象添加属性;点语法关联数组也可以;
+            Object.defineProperty(obj,&quot;name&quot;,{
+                //这个函数,会在外界访问这个属性的值的时候,被自动调用
+                //外界获取到属性值,就是这个函数的返回值
+                //注: 这里不能直接使用this.name ,会产生死递归
+                get:function(){
+                    return this._name;
+                },
+
+                //这个函数,会在外界为证属性赋值的时候,会自动调用
+                //函数形参会接受到外界赋值的内容,也就是=右边的内容
+                //obj.name = &quot;&quot;
+                set:function(value){
+                    this._name =this._name? this._name + &quot;;&quot; : &quot;&quot;  + value;
+                }
+            })
+        */
+
+        //3 过期时间
+        //默认的过期时间是浏览器关闭
+        //如何设置过期时间?
+        //GMT:格林威治时间
+        //UTC:世界协调时间
+        //过期时间可以在通过给cookie赋值的时候,后面加上expire=gmt
+        document.cookie = &quot;name=sunchen;expires=&quot;+new Date(&quot;2018-02-22 10:00:00&quot;).toGMTString(); //生成GMT格式时间
+
+        //4 设置路径
+        document.cookie = &quot;name=sunchen;path=/&quot;;//设置到根目录
+
+        //5 大小限制 4k
+
+        //6 删除cookie  将时间点设置到当前时间之前就可以了
+        document.cookie=&quot;name=sunchen;expires=&quot;+new Date(&quot;2016-02-22 10:00:00&quot;).toGMTString();
+
+    &lt;/script&gt;
+
+
+//7- 获取cookie中指定的内容
+    &lt;script&gt;
+
+        document.cookie = &quot;name=sunchen&quot;;
+        document.cookie = &quot;name2=sunchen2&quot;;
+
+        //获取cookie中name对应的值
+        //cookie的格式:key=value;
+
+
+        var kvPairArr = document.cookie.split(&quot;;&quot;);
+
+        funtion getCookieObj(){
+
+            var cookie = {};
+
+            for(var i = 0; i&lt; kvPairArr.length;i++){
+
+                var kvPair = kvPairArr[i];
+                var key = kvPair.split(&quot;=&quot;)[0].trim();
+                var value = kvPair.split(&quot;=&quot;)[1];
+
+                cookie[key] = value;
+            }
+
+            return cookie;
+
+        }
+
+        funtion getCookieByKey(key){
+
+            return getCookieObj()[key];
+
+        }
+
+    &lt;/script&gt;
+
+//8- jquery cookie插件的使用
+    npm init -y :在文件中生成一个package.json
+    npm install jquery@1.12.4
+    npm install jquery.cookie
+
+    &lt;script&gt;
+        //encodeURI 转码
+        //decodeURI 解码
+
+        //1 设置
+        $.cookie(&quot;name&quot;,&quot;sunchen&quot;);
+
+        //2 获取
+        $.cookie(&quot;name&quot;);
+
+        //3 设置过期时间
+        $.cookie(&quot;name&quot;,&quot;sunchen&quot;,{expires:7});
+
+        //4 设置路径
+            //在子路径中可以将cookie的路径设置为父路径,但是在父路径中不能将cookie的路径设置为子路径
+        $.cookie(&quot;name&quot;,&quot;sunchen&quot;,{expires:7,path:&quot;/&quot;});
+
+        //5 删除路径
+        $.removeCookie(&quot;name&quot;);
+
+    &lt;/script&gt;
+
+    //实际工作中使用cookie不一定需要使用jq,网上很多,可以自己封装下就可以
+
+//9- 服务器也可以操作cookie 
+    通过php代码操作cookie
+
+    &lt;?php 
+
+        //获取cookie内容
+        $_COOKIE
+
+        //设置cookie  服务器是通过浏览器操作cookie,告诉浏览器添加什么内容
+        setcookie(&quot;songName&quot;,&quot;hahha&quot;);
+
+    ?&gt;
+</code></pre><p>3 session<br>    //1- 概念<br>         服务器端的存储空间</p>
+<pre><code>//2- 特点
+    1 也有过期时间;一般为滑动时间制,和后台设置有关系;
+    滑动时间制:过期时间之内如果再次访问,就会重新开始计算过期时间
+
+    2 session 只能在服务器端操作 
+        通过php文件就可以操作
+        &lt;?php
+
+            session_start();
+            $_SESSION[&quot;key&quot;];
+            $_SESSION[&quot;key&quot;] = value;
+
+        ?&gt;
+</code></pre><p>4 如何通过cookie和session实现http的会话机制</p>
+<pre><code>1 当服务器接收到浏览器发来的请求时,会先检查请求中携带的cookie信息中是否有令牌;
+    如果有令牌,就会用令牌去session中查找当前这个令牌对应的信息,检查用户是否已经登录了;
+    如果没有令牌,就会session中开辟一个空间,存储当前用户的登录状态,并且将这个空间的地址作为令牌,返回给浏览器;
+
+2 登录成功的结果,响应信息中包含一个东西:set-cookie:令牌
+
+3 浏览器结构响应结果后,会在cookie中设置一个令牌;
+
+4 重复操作,就可以实现cookie和session会话
+</code></pre><p>5 跨域问题<br>    //1- 由于浏览器的同源策略,url地址中,只要协议域名端口号,任意部分不相同的url地址之间,就会形成跨域,跨域的xhr请求,会被浏览器给终止.</p>
+<pre><code>//2- 什么时候会有跨域请求出现
+    1 使用第三方的api的时候,(比如天气,地图,快递信息)
+    2 公司中将web服务器和api服务器分别部署,不同的域名,获取api服务器的数据,也会跨域
+    3 跨域请求的问题,如何解决
+      浏览器不支持xhr跨域请求!!
+
+      1 jsonp( json width padding  
+      对服务器端返回的数据格式有要求,必须是:回调函数(数据))
+
+      2 修改服务器的响应头  Access-Control-Allow-Origin:itcast.cn 不安全
+
+      3 反向代理
+        概念:将我们的web服务器设置为一个代理,将我们发送的请求转达给api服务器,并接受api服务器返回的数据,再返回给浏览器;
+
+        反向代理对服务器要求比较高,会对性能产生严重影响;
+
+        博学谷中通过反向代理解决跨域;
+        要在web服务器中做一些配置,让他可以帮我们转达;
+</code></pre><p>6 博学谷接口说明<br>    //1- 接口文档<br>        md文档中写链接格式:<br>        <a href="http://doc.botue.com" target="_blank" rel="external">文档</a><br>        md文档中写图片格式:<br>        <img src="http://img....com" alt="文档"><br>    //2- 接口地址<br>        <a href="http://api.botue.com" target="_blank" rel="external">http://api.botue.com</a><br>        博学谷接口一共8个数据库,<br>        每个数据库对应一个域名地址,<br>        v1-v9对应是<br>        <a href="http://api.botue.com/v1" target="_blank" rel="external">http://api.botue.com/v1</a> - <a href="http://api.botue.com/v9" target="_blank" rel="external">http://api.botue.com/v9</a><br>        我们班访问v3 </p>
+<pre><code>//3- 线上项目地址
+    http://bxg.botue.com
+
+//4- code (状态码说明)
+    401 :没有登录访问接口 
+    403 :登录用户不是管理员,用户分为两种,管理员和讲师,只有管理员能够对讲师进行管理;
+    500+:服务器崩了,你等会再访问
+
+注: postman:模拟请求软件
+</code></pre><p>7 配置wamp反向代理<br>    //1- 为什么要配置?<br>    因为博学谷项目的地址为studyit.com,接口地址为api.botue.com,所以直接请求就是跨域,无法正常获取数据,又由于后台接口返回的数据不支持jsonp;</p>
+<pre><code>//2- 配置后效果 todo 
+
+//3- wamp配置
+    1 打开 httpd.conf
+    2 找到如下两行,去掉#
+    LoadModule proxy_module modules/mod_proxy.so
+    LoadModule proxy_http_module modules/mod_proxy_http.so
+    3 打开httpd_vhosts.conf
+        在virtual hosts中加入如下两行
+
+        ProxyRequests off
+        ProxyPass /api http://api.botue.com/v3   
+
+        proxypass&lt;要给当前域名添加的一个路径,要将请求转发给那个接口地址,也就是说给当前域名添加了一个虚拟的路径,用来代理远程的接口服务器&gt;
+
+        登陆请求原本的地址:http://api.botue.com/v3/login
+
+        设置了如上操作,我们可以这样发
+        :http://studyit.com/api/login
+</code></pre><p>8 login登陆页面<br>    如何将用户的数据,传至首页?通过cookie<br>    到首页后,使用模板引擎渲染</p>
+<p>9 jsonp复习<br>    需求:实现一个jsonp函数,可以用来发送跨域请求<br>    //函数名:jsonp<br>    //函数参数:<br>        url:请求的地址<br>        params:请求的参数<br>        callback:请求成功之后的回调</p>
+<pre><code>&lt;script&gt;
+
+    function sucess(data){
+        alert(&quot;请求完成了&quot;);
+    }
+
+    function jsonp(url,params,callback){
+
+        //jsonp原理:
+        //标签的src属性发出去的请求不会受到浏览器同源策略的限制
+        //想要发送跨域请求的时候,只需要动态创建一个标签,将src属性设置为需要请求的url地址
+        //难点:如何知道设置了src之后,请完成了,如何知道在什么时候会调用这个函数
+        //通过script src发出去的请求,如果请求完成,name请求回来的内容,会被当做js直接执行;
+
+        //后台返回的jsonp数据格式:函数名({})
+
+        //由于请求完成后,后代返回的数据会被当做js代码执行,而后台返回的数据又是一个函数调用语句,所以,请求完成之后,这个函数会被直接调用起来;
+
+        //创建一个script标签
+        var script = document.createElement(&quot;script&quot;);
+
+        //生成一个随机的唯一的函数名
+
+        var cdname = &quot;jsonp&quot; + (+new Date()) + parthInt(Math.random()*999999 +1000000);
+
+        //发送请求前,将这个函数放到全局
+        window[cdname] = function(data){
+
+            callback(data);
+
+            //删除标签,删除函数
+            document.head.removeChild(script);
+            delete window[cdname];
+        };
+
+        url += &quot;?&quot;
+        for (var k in params){
+            url += k + &quot;=&quot; +params[k] + &quot;&amp;&quot;;
+        }
+
+        //将我们自己生成的函数名字告诉后台,以便请求成功后调用
+        url += &quot;callback=&quot;+cdname;
+
+        //2 设置script标签的src属性
+        script.src = url;
+
+        //3 将script标签添加到页面上
+        document.head.appendChild(script);
+
+    }
+
+
+&lt;/script&gt;
+</code></pre><p>10 总结<br>    http协议无状态<br>    cookie<br>        浏览器端存储区<br>        特点:</p>
+<pre><code>session
+
+通过cookie和session实现会话(有状态)时
+
+跨域
+
+反向代理配置
+
+登陆
+</code></pre><p>//================第五天===============<br>1 复习<br>    //1- http<br>        概念: hyper text transfer protocal<br>              http是基于tcpic的;<br>        特点: 无状态<br>        用途: 传输数据; 可能也有人做一些加密传输</p>
+<pre><code>//2- cookie
+     概念 :浏览器端的一个存储  键值对 4kb
+     特点 :
+            1 过期时间
+            2 存储特点
+            3 会伴随每一次请求,发送给服务器
+            4 前后端都可以操作
+
+     操作方式: js jq 
+
+//3- session
+     概念:服务器端的存储空间
+     特点:滑动时间制,也有过期时间
+     操作:后台语言都可以操作
+
+//4- cookie配置实现会话机制(有状态)
+     会话机制对前端影响较少,前端主要用到的是cookie的特性:每一次请求都会将cookie发送至服务器;
+
+//5- 跨越解决问题
+     重点掌握jsonp,知道原理,会用;
+     修改响应头: Access-Control-Allow-Oringin
+     反向代理
+
+//6- 反向代理
+     wamp配置
+
+//7- 登陆 
+</code></pre><p>2 前端模块化<br>    什么是模块坏?<br>    按照不同的规则将代码拆分成一系列的模块;</p>
+<pre><code>模块化的作用?
+方便日后的管理(开发与委会)和复用;
+
+//1- 概念
+    由于项目功能越来越多,我们不能将所有的代码全部放在一起,这样的话,不利于代码的管理,以及后期维护,和日后的复用;所以我们会将代码按照不同的规则将代码拆分成一系列的模块,这个做法就是所谓的模块化;
+
+//2- 模块化标准
+    1 标准 
+      标准就是为了实现通用的目的,制定的一系列的规则,如果大家都遵守这个规则,那么就可以实现这个效果;
+
+    2 模块化标准
+        (1) CommonJS: 后端js,比如node.js; 是为后端的js制定的标准Node.js就是遵守了这个CommonJS来实现模块化的;
+
+        (2) AMD: Async Module Definition(异步模块定义) ,实现了AMD标准的模块化技术,代表为(require.js),require.js帮助前端实现模块化的一个工具;提倡依赖前置(引用的文件)
+
+        (3) CMD: Common Module Definition (通用模块定义),实现了CMD标准的模块化技术代表为(sea.js);提倡依赖延迟,as lazy as possible 
+
+//3- 模块化的实现
+     1 以文件作为模块
+         将项目中的不同功能的代码,单纯的以文件的形式进行保存
+         缺点:
+             1 每个文件中并没有单独的作用域,在文件中声明的变量,都是全局变量,会造成全局变量污染
+             2 模块之间的依赖关系,需要通过分析之后,用script标签的顺序来进行确定;
+
+
+     2 通过require.js来实现模块化
+         可以解决上述方法的2个缺点
+
+//4- require.js的使用
+    最初的文件, == index.js
+    &lt;script&gt;
+        //1 require.js实际就是一个js文件,这个js文件中提供了一些功能,用来帮助我们来实现模块;主要是用在浏览器端
+        //2 下载require.js http://requirejs.org/
+        //3 将requirejs引入页面
+        //4 通过requirejs来定义一个模块
+            //在requirejs中给我们提供了一个函数
+            //define函数
+            //语法
+                /*define(function(){
+                    模块代码
+
+                })*/
+        //5 通过jquirejs来引用已经创建好的模块
+        /*require函数
+            语法:
+            require([&quot;不带.js后缀模块的文件路径&quot;])
+
+        */
+
+        /*6 如果模块中,有内容要提供给使用该模块的地方去用,就应该使用return将这个内容return出去
+
+        */
+
+        /*7 模块有依赖项的情况
+                1 定义模块的时候,依赖项就应该在定义的时候写好
+                2 引用模块
+
+        */
+        require([&quot;./modulea&quot;],function(sayHello){
+            //将文件请求回来,之后执行这个函数;
+            //require是将请求文件的返回值作为参数与,传递给这个回调函数,所以这个函数需要有个参数接受这个返回值,这样就拿到了模块的返回值
+            //这个function可以不写,如果文件请求成功后,还需要做一些操作,就需要通过这个函数去获得模块中的数据
+
+            sayHello();
+        });
+
+    &lt;/script&gt;
+
+    modulea文件
+    &lt;script&gt;
+    //一般我们都会将每个模块单独存储在一个js文件中
+    //当index中的require中的请求文件执行后,在模块中的define函数会执行,在define函数中,requirejs会帮我们调用define中的函数,并将函数中的返回值保存起来,接下调用require的回调函数
+        define(function(){
+            console.log(&quot;我是模块a中代码&quot;);
+
+             function sayHello(){
+                console.log(&quot;我是a模块中的函数&quot;);
+             }
+
+            /*6 如果模块中,有内容要提供给使用该模块的地方去用,就应该使用return将这个内容return出去
+            */
+             return sayHello;
+        })
+
+    &lt;/script&gt;
+
+    moduleb文件
+    &lt;script&gt;
+
+        //需求  模块B要使用模块A中的内容
+        //如果当前模块中,要依赖别的模块中的某功能,那么就需要将别的模块作为当前模块的依赖项;
+        //在define函数的第一个参数中的数组中,就可以将所有的依赖项的路径(不带js后缀)放在里面
+        //当定义当前模块的时候,requirejs会先去加载其他所有的依赖项,再讲依赖项的返回值作为参数,传递给当前模块,那么就可以在当前模块使用依赖项的中内容
+
+        define([&quot;./modulea&quot;],function(sayHello){
+            console.log(&quot;我是b模块&quot;)
+            sayHello();
+
+        })
+
+
+        /*如果有多个返回值,接受的参数和每个依赖项的顺序一一对应的,如果没有返回值,这个形参也不可以省略,一般可以将没有返回值的引用的模块文件写在后面,这样就可以不用写接受参数
+
+        */
+        define([&quot;./modulea&quot;,&quot;./modulec&quot;],function(a,c){
+
+
+        })
+
+    &lt;/script&gt;
+
+    modulec文件
+    &lt;script&gt;
+
+        define(function(){
+            alet(&quot;我是c模块&quot;)
+        })
+
+    &lt;/script&gt;
+
+//5- 多模块之间依赖处理
+    直接在模块中需要使用的模块引入就可以
+
+//6- require.js中路径研究
+    requirejs中模块文件的路径的查找方式,一共有三种
+    1 直接写路径
+        文件的路径是相对于当前执行该代码的文件来找的
+    2 设置了data-main属性之后
+        //1 文件的路径就是相对于data-main指定的文件的路径来找的
+        //2 data-main属性其实就是设置一个入口文件,当requirejs加载完毕之后,会立即去加载data-main指定的文件
+        //3 data-main指定的这个js文件,是异步加载的;
+        //4 data-main很少用,异步的
+        &lt;script src=&quot;require.js&quot; data-main=&quot;./main.js&quot;&gt;&lt;/script&gt;
+        &lt;script&gt;
+            //一般写法require[&quot;./modulea&quot;];
+            //使用data-main,可以将require[&quot;./modulea&quot;];这个代码放入main.js文件
+        &lt;/script&gt;
+
+    3 设置了baseUrl之后,所有的文件路径的查找都是以这个baseUrl作为参照的;工作中最常用的方式,不是单独使用,和paths配合使用
+        3.1 实际工作中,一般将baseUrl设置为多个文件夹的共同文件夹名;
+        3.2 
+            //1- baseUrl介绍
+                1 require提供了一个设置方法,可以设置requirejs相关的一些内容
+                    //1 require.comfig
+                        可以用来设置baseUrl等
+
+        &lt;script&gt;
+            require.config({
+                baseUrl:&quot;目录&quot;,
+                //paths可以为每一个模块的路径设置一个别名(ID),以后使用模块的时候,直接使用别名就可以,requirejs在处理别名的时候,其实就是将baseUrl和path结合区找的文件
+                //paths中文件不能有如下的内容出现,如果有就不会遵守将将baseUrl和path结合的方式去找文件
+                    /*
+                    1 不能以 http:// https://
+                    2 不能以/开头 
+                    3 不能有.js后缀
+
+                    */
+                paths:{
+                    &quot;a&quot;:&quot;cms/login/user/a&quot;
+                }
+                //设置了这个绝对路径目录,要用服务器打开
+
+            })
+
+            //设置了baseUrl,所有的文件都是以这个目录作为参照的
+
+            require([&quot;a&quot;]);
+        &lt;/script&gt;
+
+
+//7- require.js使用注意事项
+
+    (1) 一个文件模块中只允许写一个define函数调用,如果有多个,最终只会执行第一个;
+    (2) 如果一个define函数中有两个函数需要返回,通过对象形式进行返回;
+    (3) 如果define中需要依赖别的模块,通过define的第一个参数[],传入路径,如果需要接受别的模块的返回值 ,通过第二个参数的函数中的参数接受,一般没有返回值的函数对应的形参放在后面
+
+
+//8- 使用require.js加载第三方文件
+    1 当需要使用requirejs加载第三方文件内容的时候
+        //1- 考虑这个文件支不支持模块化
+            //判断方式,如果要找第三方文件是否支持模块化,搜/bdefine/ 如果设置了 define==function(){}
+             1. 如果支持直接用就行
+             2. 如果不支持
+                 考虑这个文件有没有依赖项:
+
+                     (1)如果没有依赖项,就直接使用require函数将其引入即可
+
+
+                     (2)如果有依赖项,就需要进行别的配置
+
+        //2- 考虑这个文件是否有返回值(有没有内容需要提供给外界使用)
+
+            1 如果没有需要提供给外界使用的内容,那么直接使用require
+            2 如果有需要提供给外界使用的内容,那么需要在shim中,为这个模块设置一下他的输出项,通过exports输出:&quot;第三方文件中的全局变量的名字&quot;
+
+        &lt;script&gt;
+            //如果第三方文件没有依赖项
+            require([&quot;./thirdfang&quot;]);
+
+            //如果有依赖项,我们需要通过config方法,为这个模块配置依赖项
+            //在config方法中,参数对象中添加一个属性,shim
+            /*shim是一个对象
+             (1) 对象中属性名就是要设置依赖项的模块的别名
+             (2) 属性值是一个对象,对象中包含一个属性,deps
+            deps属性是一个数组,数组中放当前这个第三方模块的依赖项即可*/
+
+            require.config({
+                baseUrl:&quot;/&quot;,
+                paths:{
+                    &quot;third&quot;:&quot;./thirdfang&quot;,
+                    jquery:&quot;路径&quot;
+
+                },
+
+                //只有加载第三方内容的时候才会用到下面的shim属性
+                shim:{
+
+                    &quot;third&quot;:{
+                        deps: [&quot;jquery&quot;], //deps是用来设置依赖项的
+                        &quot;animate&quot;:{
+
+                            deps:[&quot;jquery&quot;],
+                            //设置当前内容的返回值
+                            exports:&quot;animate&quot;  //只能设置一个
+                        }
+                    }
+                }
+            })
+
+            require([&quot;third&quot;]);
+        &lt;/script&gt;
+
+    2 
+//9 具名模块和匿名模块的说明
+    1 模块创建方式
+        define(&quot;模块名&quot;,[],function(){
+
+        })
+
+        注意:当创建模块的时候,使用的是具名方式的时候,如果要在paths中设置别名,那么这个别名必须和模块创建时所定义的模块名相同
+
+    2 匿名创建方式
+        define([],function(){
+
+        })
+</code></pre><p>3 博学谷项目<br>    登录页面:模块化改造<br>    登陆优化:检查用户是否登陆,实际工作中由后台做,登陆状态判断实现<br>    退出登陆:向后台发送请求,<br>        好看的模态框:layer  layui可以看看这个人<br>        贤心 可以看看这个博客</p>
+<p>4 异步提交表单内容<br>    //1- 默认同步<br>    action不写 默认值是当前页面,<br>    <form action="/xyz.php" method="post"><br>        <input type="text" name="uname"><br>        <input type="text" name="psd"><br>        <button>提交</button><br>    </form></p>
+<pre><code>//JqueryForm
+&lt;script&gt;
+
+    $(&quot;form&quot;).submit(function(){
+        //如果表单中写了,,action和method,那么jqform插件会自动去表单中获取这两项内容
+
+        //也可以通过参数告诉插件,要往哪里提交,以及提交方式
+        $(this).ajaxSubmit({
+            url:&quot;xyz.json&quot;,
+            type:&quot;get&quot;,
+            data:{
+                //表单中的数据会自动被获取,这里data中的内容是需要额外提交的内容
+            }
+            sucess:function(data){
+                //提交成功后的代码
+            }
+        })
+        return false;
+    })
+&lt;/script&gt;
+</code></pre><p>5 总结<br>    模块化<br>        1 概念<br>            依据不同的规则,将代码分成一个个小模块</p>
+<pre><code>    2 为什么要做模块化
+        方便代码的管理(开发与维护)
+        方便代码的复用
+
+    3 怎么做模块化
+        在前段开发当中,需要借助一些工具来实现模块化
+
+
+模块化标准
+    CommonJs 适用于后端,node.js中使用的就是commonjs标准
+
+    AMD:异步模块定义 代表 requirejs 推崇 依赖前置
+
+    CMD:通用模块定义 代表sea.js 推崇 就近,依赖延迟
+
+    定义模块
+        具名模块
+        define(&quot;模块名称&quot;,[&quot;依赖项&quot;],function(依赖项返回值){})
+        匿名模块
+        define([&quot;依赖项&quot;],function(依赖项返回值){})
+
+    引用模块
+        require([&quot;模块路径(不带js)&quot;],function(加载的模块的返回值){
+            //当模块加载完毕之后,会执行这个函数中的代码
+        })
+
+
+    配置路径
+        1 如果不做任何配置,那么路径就是当前文件所在的文件作为基础进行查找
+        2 如果使用&quot;data-main&quot;
+        3 如果设置了baseUrl
+
+        补充:data-main 
+        当require.js加载完毕之后,会异步去请求这个data-main属性指定的文件,执行文件中的代码
+
+    baseUrl和paths配置方式
+        require.config({
+            baseUrl:&quot;设置基本路径,一般为绝对路径&quot;,
+            paths:{
+                &quot;别名(id)&quot;:&quot;模块路径,以baseUrl为基础的路径&quot;
+
+            }
+        })
+
+        当设置了baseUrl和paths的时候,name模块的查找,都会依据 baseUrl+paths来查找,如果paths出现了如下内容将不会依据baseUrl+paths来查找
+            1. 以http https协议开头的路径
+            2 以/开头的绝对路径
+            3 以.js结尾的文件
+
+    引用第三方内容
+        首要考虑的问题:第三方内容是否支持模块化?直接使用: 考虑第三方内容是否有依赖项
+
+        如果有依赖项:
+        1 先配置模块化别名
+        2 在配置shim
+        shim:{
+            别名:{
+                deps:[&quot;依赖项路径/别名&quot;],
+                exports:&quot;第三方内容中的全局变量的名称&quot;
+            }
+
+
+        }
+
+        登陆和commonjs 模块化改造
+
+        jquery-form
+</code></pre>
+  </section>
+</article>
+
+  <div class="sharing grid">
+  <section class="profile grid-item grid">
+    <img class="avatar" src="/images/avatar.png" alt="avatar" />
+    <div class="grid-item">
+      <p class="title"> sara sun blog </p>
+      <p class="subtitle"> You Are The JavaScript In My HTML </p>
+    <div>
+  </section>
+
+  <section class="share-btns">
+    <!-- <p> share it if you like it~ </p> -->
+    <a
+  class="twitter-share-button"
+  data-size="large"
+  data-via="DrakeLeung"
+  href="https://twitter.com/intent/tweet?text=//======博学谷第一天======"
+>
+  Tweet
+</a>
+
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  js.async = true;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+
+  </section>
+</div>
+
+
+  
+    
+<section class="article-comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+<script>
+  var disqus_shortname = 'drakeleung';
+  
+  var disqus_url = 'http://yoursite.com/2017/10/12/bxgnote/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+  
+</main>
+
+</body>
+</html>
